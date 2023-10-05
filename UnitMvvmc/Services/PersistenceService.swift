@@ -7,15 +7,21 @@
 
 import Foundation
 
-protocol PersistenceServiceProtocol {
+protocol FavoritesPersistenceServiceProtocol {
     var favoritesMovies: [Movie] { get set }
 }
 
-class PersistenceService: PersistenceServiceProtocol {
+protocol UserPersistenceProtocol {
+    var currentUser: User? { get set }
+}
+
+class PersistenceService: FavoritesPersistenceServiceProtocol {
     private let userDefaults = UserDefaults.standard
     enum Key: String {
         case movies
+        case user
     }
+    
     var favoritesMovies: [Movie] {
         get {
             if let data = userDefaults.object(forKey: Key.movies.rawValue) as? Data {
@@ -38,6 +44,17 @@ class PersistenceService: PersistenceServiceProtocol {
     }
 }
 
-class PersistenceServiceMock: PersistenceServiceProtocol {
+extension PersistenceService: UserPersistenceProtocol {
+    var currentUser: User? {
+        get {
+            userDefaults.object(forKey: Key.user.rawValue) as? User
+        }
+        set {
+            userDefaults.set(newValue, forKey: Key.user.rawValue)
+        }
+    }
+}
+
+class FavoritesPersistenceServiceMock: FavoritesPersistenceServiceProtocol {
     var favoritesMovies =  [Movie]()
 }

@@ -40,7 +40,7 @@ enum ToggleFavoritesResult {
 }
 
 class FavoriteService: FavoriteServiceProtocol {
-    private var persistenceService: PersistenceServiceProtocol
+    private var persistenceService: FavoritesPersistenceServiceProtocol
     private(set)var favorites: [Movie] {
         get {
             persistenceService.favoritesMovies
@@ -49,7 +49,7 @@ class FavoriteService: FavoriteServiceProtocol {
             persistenceService.favoritesMovies = newValue
         }
     }
-    public init(persistenceService: PersistenceServiceProtocol) {
+    public init(persistenceService: FavoritesPersistenceServiceProtocol) {
         self.persistenceService = persistenceService
         favorites = persistenceService.favoritesMovies
     }

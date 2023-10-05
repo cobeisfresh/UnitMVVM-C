@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F5657022ACD92FD00CD2865 /* MovieDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5657012ACD92FD00CD2865 /* MovieDetailsViewModelTest.swift */; };
 		5F5657042ACD9E6800CD2865 /* MovieListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5657032ACD9E6800CD2865 /* MovieListViewModelTest.swift */; };
+		5F901FC12ACDF3E3001ECC5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC02ACDF3E3001ECC5F /* User.swift */; };
+		5F901FC32ACDF4B6001ECC5F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC22ACDF4B6001ECC5F /* UserService.swift */; };
 		5FBCB5A22AC746950085BF14 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */; };
 		5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDF72AC81458000C066C /* MoviesService.swift */; };
 		5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDFA2AC814C0000C066C /* Movie.swift */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		5F5657012ACD92FD00CD2865 /* MovieDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTest.swift; sourceTree = "<group>"; };
 		5F5657032ACD9E6800CD2865 /* MovieListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTest.swift; sourceTree = "<group>"; };
+		5F901FC02ACDF3E3001ECC5F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5F901FC22ACDF4B6001ECC5F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		5FDBEDF72AC81458000C066C /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		5FDBEDFA2AC814C0000C066C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -116,6 +120,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F901FBF2ACDF3AE001ECC5F /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		5FBCB5A02AC7467E0085BF14 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +134,7 @@
 				5FDBEDF72AC81458000C066C /* MoviesService.swift */,
 				5FDBEE0B2AC985B6000C066C /* FavoriteService.swift */,
 				5FDBEE0D2AC986CA000C066C /* PersistenceService.swift */,
+				5F901FC22ACDF4B6001ECC5F /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5FDBEDFA2AC814C0000C066C /* Movie.swift */,
+				5F901FC02ACDF3E3001ECC5F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +248,7 @@
 		5FF829F82AC1C6E7000BFD29 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5F901FBF2ACDF3AE001ECC5F /* User */,
 				5FDBEDFE2AC816F1000C066C /* Common */,
 				5FDBEDFD2AC816C9000C066C /* Favorites */,
 				5FDBEDFC2AC816C1000C066C /* Movies */,
@@ -380,6 +394,7 @@
 				5FF829F32AC1B9AB000BFD29 /* Coordinator.swift in Sources */,
 				5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */,
 				5FF829FA2AC1C6FF000BFD29 /* MainCoordinator.swift in Sources */,
+				5F901FC32ACDF4B6001ECC5F /* UserService.swift in Sources */,
 				5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */,
 				5FDBEE0E2AC986CA000C066C /* PersistenceService.swift in Sources */,
 				5FDBEE062AC8243F000C066C /* MovieList.swift in Sources */,
@@ -394,6 +409,7 @@
 				5FF829C12AC1B956000BFD29 /* AppDelegate.swift in Sources */,
 				5FF829C32AC1B956000BFD29 /* SceneDelegate.swift in Sources */,
 				5FDBEE102AC9E265000C066C /* FavoritesView.swift in Sources */,
+				5F901FC12ACDF3E3001ECC5F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

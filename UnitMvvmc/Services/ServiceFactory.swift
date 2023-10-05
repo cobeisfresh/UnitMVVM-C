@@ -16,7 +16,12 @@ class ServiceFactory {
         FavoriteService(persistenceService: persistenceService)
     }()
     
-    lazy var persistenceService: PersistenceServiceProtocol = {
+    lazy var persistenceService: FavoritesPersistenceServiceProtocol & UserPersistenceProtocol  = {
         PersistenceService()
     }()
+
+    lazy var userService: UserServiceProtocol = {
+        UserService(persistenceService: persistenceService)
+    }()
+ 
 }

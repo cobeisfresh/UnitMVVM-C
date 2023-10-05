@@ -20,7 +20,7 @@ final class MovieDetailsViewModelTest: XCTestCase {
 
     @MainActor func testAddedToFavorites() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         let vm = MovieDetails.ViewModel(movie: movie, favoriteService: favoriteService)
         XCTAssertFalse(vm.isFavorite)
@@ -30,7 +30,7 @@ final class MovieDetailsViewModelTest: XCTestCase {
     
     @MainActor func testRemovingFromFavorites() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         persistenceServiceMocked.favoritesMovies = [movie]
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         let vm = MovieDetails.ViewModel(movie: movie, favoriteService: favoriteService)

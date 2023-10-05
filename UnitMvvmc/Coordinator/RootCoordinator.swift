@@ -21,7 +21,7 @@ class RootCoordinator {
 
 extension RootCoordinator: Coordinator {
     @MainActor func start() {
-        user = User()
+        user = User.mocked
         guard let user = user else {
             startWithoutUser()
             return
@@ -42,8 +42,4 @@ private extension RootCoordinator {
         rootViewController = mainCoordintor.rootViewController
         childCoordinator = mainCoordintor
     }
-}
-
-struct User {
-    
 }

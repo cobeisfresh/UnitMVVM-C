@@ -19,7 +19,7 @@ final class FavoriteServiceTests: XCTestCase {
     }
 
     func testFavoriteAdded() {
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         let result = favoriteService.addToFavorites(movie: Movie.mocked)
         XCTAssert(result == .added)
@@ -27,7 +27,7 @@ final class FavoriteServiceTests: XCTestCase {
     
     func testFavoriteAlreadyAdded() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         persistenceServiceMocked.favoritesMovies = [movie]
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         
@@ -37,7 +37,7 @@ final class FavoriteServiceTests: XCTestCase {
     
     func testFavoriteRemoved() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         persistenceServiceMocked.favoritesMovies = [movie]
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         
@@ -47,7 +47,7 @@ final class FavoriteServiceTests: XCTestCase {
     
     func testFavoriteNotRemoved() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         
         let result = favoriteService.removeFromFavorites(movie: movie)
@@ -56,7 +56,7 @@ final class FavoriteServiceTests: XCTestCase {
     
     func testFavoriteToggleAdd() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         
         let result = favoriteService.toggleFavorite(movie: movie)
@@ -65,7 +65,7 @@ final class FavoriteServiceTests: XCTestCase {
     
     func testFavoriteToggleRemoved() {
         let movie = Movie.mocked
-        let persistenceServiceMocked = PersistenceServiceMock()
+        let persistenceServiceMocked = FavoritesPersistenceServiceMock()
         persistenceServiceMocked.favoritesMovies = [movie]
         let favoriteService = FavoriteService(persistenceService: persistenceServiceMocked)
         
