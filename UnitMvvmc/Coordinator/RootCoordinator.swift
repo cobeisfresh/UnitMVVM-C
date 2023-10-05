@@ -8,12 +8,21 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Combine
 
 class RootCoordinator {
     let serviceFactory: ServiceFactory
     var user: User?
-    var rootViewController: UIViewController?
+    var onRootChanged:((UIViewController) -> Void)?
+    var rootViewController: UIViewController? {
+        didSet {
+            if let root = rootViewController {
+                onRootChanged?(root)
+            }
+        }
+    }
     private var childCoordinator: Coordinator?
+    var cancellables = Set<AnyCancellable>()
     init (serviceFactory: ServiceFactory) {
         self.serviceFactory = serviceFactory
     }
@@ -21,19 +30,27 @@ class RootCoordinator {
 
 extension RootCoordinator: Coordinator {
     @MainActor func start() {
-        user = User.mocked
+        serviceFactory.userService.user.sink { [weak self] user in
+            print("user changed = \(String(describing: user))")
+            self?.start(user: user)
+        }.store(in: &cancellables)
+        start(user: serviceFactory.userService.user.value)
+    }
+}
+
+private extension RootCoordinator {
+    @MainActor func start(user: User?) {
         guard let user = user else {
             startWithoutUser()
             return
         }
         start(with: user)
     }
-}
-
-private extension RootCoordinator {
-    func startWithoutUser() {
-        let rootView = RootView()
-        rootViewController = UIHostingController(rootView: rootView)
+    @MainActor func startWithoutUser() {
+        let authCoordintor = AuthentificationCoordinator(serviceFactory: serviceFactory)
+        authCoordintor.start()
+        rootViewController = authCoordintor.rootViewController
+        childCoordinator = authCoordintor
     }
     
     @MainActor func start(with user: User) {

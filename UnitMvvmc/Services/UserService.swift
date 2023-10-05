@@ -16,12 +16,24 @@ protocol UserServiceProtocol {
 
 class UserService: UserServiceProtocol {
     let user = CurrentValueSubject<User?, Never>(nil)
-    let persistenceService: UserPersistenceProtocol
+    var persistenceService: UserPersistenceProtocol
     init(persistenceService: UserPersistenceProtocol) {
         self.persistenceService = persistenceService
         self.user.value = persistenceService.currentUser
     }
     
+    func login(user: User) {
+        persistenceService.currentUser = user
+        self.user.send(user)
+    }
+    func logout() {
+        persistenceService.currentUser = nil
+        user.send(nil)
+    }
+}
+
+class UserServiceMock: UserServiceProtocol {
+    let user: CurrentValueSubject<User?, Never> = .init(User.mocked)
     func login(user: User) {
         
     }

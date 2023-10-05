@@ -11,6 +11,9 @@
 		5F5657042ACD9E6800CD2865 /* MovieListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5657032ACD9E6800CD2865 /* MovieListViewModelTest.swift */; };
 		5F901FC12ACDF3E3001ECC5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC02ACDF3E3001ECC5F /* User.swift */; };
 		5F901FC32ACDF4B6001ECC5F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC22ACDF4B6001ECC5F /* UserService.swift */; };
+		5F901FC72ACE97C3001ECC5F /* AuthentificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC62ACE97C3001ECC5F /* AuthentificationCoordinator.swift */; };
+		5F901FC92ACE97CF001ECC5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC82ACE97CF001ECC5F /* LoginView.swift */; };
+		5F901FCB2ACE984C001ECC5F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FCA2ACE984C001ECC5F /* LoginViewModel.swift */; };
 		5FBCB5A22AC746950085BF14 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */; };
 		5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDF72AC81458000C066C /* MoviesService.swift */; };
 		5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDFA2AC814C0000C066C /* Movie.swift */; };
@@ -62,6 +65,9 @@
 		5F5657032ACD9E6800CD2865 /* MovieListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTest.swift; sourceTree = "<group>"; };
 		5F901FC02ACDF3E3001ECC5F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5F901FC22ACDF4B6001ECC5F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		5F901FC62ACE97C3001ECC5F /* AuthentificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationCoordinator.swift; sourceTree = "<group>"; };
+		5F901FC82ACE97CF001ECC5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5F901FCA2ACE984C001ECC5F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		5FDBEDF72AC81458000C066C /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		5FDBEDFA2AC814C0000C066C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -125,6 +131,23 @@
 			children = (
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5F901FC42ACE93E3001ECC5F /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				5F901FC62ACE97C3001ECC5F /* AuthentificationCoordinator.swift */,
+				5F901FC82ACE97CF001ECC5F /* LoginView.swift */,
+				5F901FCA2ACE984C001ECC5F /* LoginViewModel.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		5F901FC52ACE93F1001ECC5F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		5FBCB5A02AC7467E0085BF14 /* Services */ = {
@@ -248,6 +271,8 @@
 		5FF829F82AC1C6E7000BFD29 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5F901FC52ACE93F1001ECC5F /* Profile */,
+				5F901FC42ACE93E3001ECC5F /* Authentification */,
 				5F901FBF2ACDF3AE001ECC5F /* User */,
 				5FDBEDFE2AC816F1000C066C /* Common */,
 				5FDBEDFD2AC816C9000C066C /* Favorites */,
@@ -394,12 +419,15 @@
 				5FF829F32AC1B9AB000BFD29 /* Coordinator.swift in Sources */,
 				5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */,
 				5FF829FA2AC1C6FF000BFD29 /* MainCoordinator.swift in Sources */,
+				5F901FC92ACE97CF001ECC5F /* LoginView.swift in Sources */,
 				5F901FC32ACDF4B6001ECC5F /* UserService.swift in Sources */,
 				5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */,
 				5FDBEE0E2AC986CA000C066C /* PersistenceService.swift in Sources */,
 				5FDBEE062AC8243F000C066C /* MovieList.swift in Sources */,
 				5FDBEE042AC822C8000C066C /* FavoritesCoordinator.swift in Sources */,
 				5FDBEE122ACC087A000C066C /* FavoritesViewModel.swift in Sources */,
+				5F901FCB2ACE984C001ECC5F /* LoginViewModel.swift in Sources */,
+				5F901FC72ACE97C3001ECC5F /* AuthentificationCoordinator.swift in Sources */,
 				5FDBEE0A2AC9854C000C066C /* MovieDetailsViewModel.swift in Sources */,
 				5FF829C52AC1B956000BFD29 /* ViewController.swift in Sources */,
 				5FF829F72AC1C53F000BFD29 /* RootView.swift in Sources */,

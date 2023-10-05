@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
     let username: String
-    let id = UUID().uuidString
+    //let id = UUID().uuidString
 }
 
 extension User {

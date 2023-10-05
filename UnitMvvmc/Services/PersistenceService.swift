@@ -28,7 +28,7 @@ class PersistenceService: FavoritesPersistenceServiceProtocol {
                 do {
                     return try JSONDecoder().decode([Movie].self, from: data)
                 } catch {
-                    print("Error while decoding user data")
+                    print("Error while decoding movie data")
                 }
             }
             return []
@@ -38,7 +38,7 @@ class PersistenceService: FavoritesPersistenceServiceProtocol {
                 let data = try JSONEncoder().encode(newValue)
                 userDefaults.set(data, forKey: Key.movies.rawValue)
             } catch {
-                print("Error while encoding user data")
+                print("Error while encoding movie data")
             }
         }
     }
@@ -47,10 +47,22 @@ class PersistenceService: FavoritesPersistenceServiceProtocol {
 extension PersistenceService: UserPersistenceProtocol {
     var currentUser: User? {
         get {
-            userDefaults.object(forKey: Key.user.rawValue) as? User
+            if let data = userDefaults.object(forKey: Key.user.rawValue) as? Data {
+                do {
+                    return try JSONDecoder().decode(User.self, from: data)
+                } catch {
+                    print("Error while decoding user data")
+                }
+            }
+            return nil
         }
         set {
-            userDefaults.set(newValue, forKey: Key.user.rawValue)
+            do {
+                let data = try JSONEncoder().encode(newValue)
+                userDefaults.set(data, forKey: Key.user.rawValue)
+            } catch {
+                print("Error while encoding user data")
+            }
         }
     }
 }

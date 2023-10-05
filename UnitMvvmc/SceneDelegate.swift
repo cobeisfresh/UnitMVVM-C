@@ -20,10 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let winScene = (scene as? UIWindowScene) else { return }
         rootCoordinator.start()
         if let vc = rootCoordinator.rootViewController {
-            window = UIWindow(windowScene: winScene)
-            window?.rootViewController = vc
-            window?.makeKeyAndVisible()
+            start(viewController: vc, winScene: winScene)
         }
+        rootCoordinator.onRootChanged = { [weak self] vc in
+            self?.start(viewController: vc, winScene: winScene)
+        }
+    }
+    
+    private func start(viewController: UIViewController, winScene: UIWindowScene) {
+        window = UIWindow(windowScene: winScene)
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
