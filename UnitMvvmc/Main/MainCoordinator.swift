@@ -20,7 +20,7 @@ class MainCoordinator: Coordinator {
     
     @MainActor func start() {
         let tabVC = UITabBarController()
-        tabVC.viewControllers = [createMovies(), createFavorites()]
+        tabVC.viewControllers = [createMovies(), createFavorites(), createProfile()]
         rootViewController = tabVC
     }
     
@@ -36,5 +36,12 @@ class MainCoordinator: Coordinator {
         childCoordinators.append(favorites)
         favorites.start()
         return favorites.rootViewController!
+    }
+    
+    @MainActor private func createProfile() -> UIViewController {
+        let profile = ProfileCoordinator(serviceFactory: serviceFactory)
+        childCoordinators.append(profile)
+        profile.start()
+        return profile.rootViewController!
     }
 }

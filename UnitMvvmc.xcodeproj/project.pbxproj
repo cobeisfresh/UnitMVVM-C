@@ -14,6 +14,9 @@
 		5F901FC72ACE97C3001ECC5F /* AuthentificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC62ACE97C3001ECC5F /* AuthentificationCoordinator.swift */; };
 		5F901FC92ACE97CF001ECC5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FC82ACE97CF001ECC5F /* LoginView.swift */; };
 		5F901FCB2ACE984C001ECC5F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FCA2ACE984C001ECC5F /* LoginViewModel.swift */; };
+		5F901FCD2ACEA0AD001ECC5F /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FCC2ACEA0AD001ECC5F /* ProfileCoordinator.swift */; };
+		5F901FCF2ACEA0BA001ECC5F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FCE2ACEA0BA001ECC5F /* ProfileView.swift */; };
+		5F901FD12ACEA0CB001ECC5F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F901FD02ACEA0CB001ECC5F /* ProfileViewModel.swift */; };
 		5FBCB5A22AC746950085BF14 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */; };
 		5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDF72AC81458000C066C /* MoviesService.swift */; };
 		5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDBEDFA2AC814C0000C066C /* Movie.swift */; };
@@ -68,6 +71,9 @@
 		5F901FC62ACE97C3001ECC5F /* AuthentificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationCoordinator.swift; sourceTree = "<group>"; };
 		5F901FC82ACE97CF001ECC5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5F901FCA2ACE984C001ECC5F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5F901FCC2ACEA0AD001ECC5F /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		5F901FCE2ACEA0BA001ECC5F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5F901FD02ACEA0CB001ECC5F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5FBCB5A12AC746950085BF14 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		5FDBEDF72AC81458000C066C /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		5FDBEDFA2AC814C0000C066C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 		5F901FC52ACE93F1001ECC5F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5F901FCC2ACEA0AD001ECC5F /* ProfileCoordinator.swift */,
+				5F901FCE2ACEA0BA001ECC5F /* ProfileView.swift */,
+				5F901FD02ACEA0CB001ECC5F /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -414,13 +423,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FDBEE002AC8170C000C066C /* MovieDetails.swift in Sources */,
+				5F901FCF2ACEA0BA001ECC5F /* ProfileView.swift in Sources */,
 				5FBCB5A22AC746950085BF14 /* ServiceFactory.swift in Sources */,
 				5FDBEE0C2AC985B6000C066C /* FavoriteService.swift in Sources */,
 				5FF829F32AC1B9AB000BFD29 /* Coordinator.swift in Sources */,
 				5FDBEDF82AC81458000C066C /* MoviesService.swift in Sources */,
+				5F901FD12ACEA0CB001ECC5F /* ProfileViewModel.swift in Sources */,
 				5FF829FA2AC1C6FF000BFD29 /* MainCoordinator.swift in Sources */,
 				5F901FC92ACE97CF001ECC5F /* LoginView.swift in Sources */,
 				5F901FC32ACDF4B6001ECC5F /* UserService.swift in Sources */,
+				5F901FCD2ACEA0AD001ECC5F /* ProfileCoordinator.swift in Sources */,
 				5FDBEDFB2AC814C0000C066C /* Movie.swift in Sources */,
 				5FDBEE0E2AC986CA000C066C /* PersistenceService.swift in Sources */,
 				5FDBEE062AC8243F000C066C /* MovieList.swift in Sources */,
